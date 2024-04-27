@@ -11,6 +11,7 @@ import axios from "axios";
 import ReplyIcon from "@mui/icons-material/Reply";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
+import { FilePresent } from "@mui/icons-material";
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -56,11 +57,23 @@ export default function SignIn() {
           backgroundSize: "cover",
           backgroundPosition: "center",
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
+          backgroundColor: "rgba(255, 255, 255, 0.5)",
+          width: "600px",
+          height: "600px",
         }}
       >
-        <Button onClick={handleLogin}> Iniciar Sesión </Button>
+        <form sx={{height:'100%', with:'100%', flexDirection: "column", border:'none', outline:'none'}}>
+          <Typography variant="h4" align='center' color='white'>Iniciar Sesión</Typography>
+          <label>Correo Electronico</label>
+          <input type="text" name="usuario" />
+          <label>Contraseña</label>
+          <input type="password" name="contraseña" />
+
+        </form>
+        <Button onClick={handleLogin}> Iniciar </Button>
       </Box>
     </ThemeProvider>
   );
