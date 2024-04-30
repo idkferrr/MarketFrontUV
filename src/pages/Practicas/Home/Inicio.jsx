@@ -1,18 +1,16 @@
-import SignIn from "../Login/Login"; // Actualiza esto con la ruta correcta al componente SignIn
+import SignIn from "../Login/Login";
 import React, {useEffect} from "react";
 import PageContainer from "../../../components/container/PageContainer";
-import { Box, Typography, Grid, useTheme, useMediaQuery } from "@mui/material";
-import backgroundImage from "./Components/Background.jpg";
+import { Box, Typography, Grid} from "@mui/material";
+import logo from "./Components/logo.png";
+import "./Components/Iniciofont.css"
 
 function Inicio() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
  
   return (
-
     <PageContainer
-      title="Prácticas - Postulación a practicas profesionales | Administración Pública"
-      description="Sistema de prácticas profesionales"
+      title="MARKETPLACE UV"
+      description="Mercado de la Universidad de Valparaíso"
     >
       <Box
         sx={{
@@ -20,75 +18,40 @@ function Inicio() {
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
-          backgroundImage: `url(${backgroundImage})`,
+          height: "100%",
+          backgroundColor: "#043C5C",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
-          minHeight: "980px",
-          padding: isMobile ? 2 : 3,
-          flexDirection: "column",
+          minHeight: "100vh",
         }}
       >
-        <Box
-          sx={{
-            padding: 3,
-            backgroundColor: "rgba(255, 255, 255, 0.9)",
-            borderRadius: 4,
-            width: isMobile ? "100%" : "70%", // 100% width for mobile, 70% for PC
-          }}
+        <Grid
+          container
+          justifyContent="center"
+          alignItems="center"
+          spacing={2}
+          height={"100%"}
+          width={"100%"}
         >
-          <Grid
-            container
-            justifyContent="center"
-            alignItems="center"
-            spacing={2}
-          >
-            <Grid item xs={12}>
-              <Typography
-                variant={isMobile ? "h4" : "h3"}
-                component="h1"
-                sx={{
-                  color: "black",
-                  fontFamily: "monospace",
-                  fontWeight: 700,
-                  textAlign: "center",
-                }}
-              >
-                Postulación a Prácticas Profesionales
-              </Typography>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              sx={{ display: "flex", justifyContent: "center" }}
-            >
-              <img
-                src="https://practicas.administracionpublica-uv.cl/imagenes/logo_sis_practicas.png"
-                alt="Logo Practicas Profesionales"
-                style={{
-                  width: "350px",
-                  height: "100px",
-                  transform: "scale(0.8)", // Ajusta la escala según sea necesario
-                }} // Ajusta el tamaño según sea necesario
-              />
-            </Grid>
-            <Grid item xs={12} sx={{ textAlign: "center", mb: 0, pb: 0 }}>
-              <Typography
-                variant={isMobile ? "h5" : "h5"}
-                sx={{ textAlign: "center", fontWeight: 300 }}
-              >
-                Bienvenido al sistema de prácticas de Administración Pública de
-                la Universidad de Valparaíso. Para continuar, necesitas ingresar
-                con tu cuenta. De no contar con una, puedes registrarte en
-                nuestro sistema.
-              </Typography>
-            </Grid>
-            {/* Aquí se incluye el formulario de SignIn directamente */}
-            <Grid item xs={12} sx={{ pt: 0, mt: 0 }}>
-              <SignIn />
-            </Grid>
+          {/* Caja de la izquierda */}
+          <Grid item xs={12} md={6}>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height:'100%'}}>
+            <Typography variant="h3" color='white' className="poiret-one">Bienvenido a <br/> MarketPlace UV</Typography>
+            </Box>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height:'100%' }}>
+              <img src={logo} alt="Logo" style={{width:'650px'}} />
+            
+            </Box>
           </Grid>
-        </Box>
+
+          {/* Caja de la derecha */}
+          <Grid item xs={12} md={6}>
+            <Box>
+            <SignIn />
+            </Box>
+          </Grid>
+        </Grid>
       </Box>
     </PageContainer>
   );
