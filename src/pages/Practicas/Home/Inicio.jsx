@@ -1,12 +1,11 @@
 import SignIn from "../Login/Login";
 import React, {useEffect} from "react";
 import PageContainer from "../../../components/container/PageContainer";
-import { Box, Typography, Grid, useTheme, useMediaQuery } from "@mui/material";
+import { Box, Typography, Grid} from "@mui/material";
 import logo from "./Components/logo.png";
+import "./Components/Iniciofont.css"
 
 function Inicio() {
-  const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
  
   return (
     <PageContainer
@@ -19,13 +18,12 @@ function Inicio() {
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
+          height: "100%",
           backgroundColor: "#043C5C",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center center",
-          minHeight: "980px",
-          padding: isMobile ? 2 : 3,
-          flexDirection: "column",
+          minHeight: "100vh",
         }}
       >
         <Grid
@@ -33,25 +31,23 @@ function Inicio() {
           justifyContent="center"
           alignItems="center"
           spacing={2}
+          height={"100%"}
+          width={"100%"}
         >
           {/* Caja de la izquierda */}
           <Grid item xs={12} md={6}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <Typography variant="h4" color='white'>Bienvenido a MarketPlaceUV</Typography>
-              <img src={logo} alt="Logo" />
-              
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height:'100%'}}>
+            <Typography variant="h3" color='white' className="poiret-one">Bienvenido a <br/> MarketPlace UV</Typography>
+            </Box>
+            <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', height:'100%' }}>
+              <img src={logo} alt="Logo" style={{width:'650px'}} />
+            
             </Box>
           </Grid>
 
           {/* Caja de la derecha */}
           <Grid item xs={12} md={6}>
-            <Box sx={{ 
-              display: 'flex', 
-              flexDirection: 'column', 
-              alignItems: 'center', 
-              height: '100%', 
-              width:'80%',  
-              }}>
+            <Box>
             <SignIn />
             </Box>
           </Grid>

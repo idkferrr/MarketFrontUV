@@ -12,6 +12,7 @@ import ReplyIcon from "@mui/icons-material/Reply";
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { FilePresent } from "@mui/icons-material";
+import { FormControl, FormLabel } from "@mui/material";
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -60,20 +61,59 @@ export default function SignIn() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "rgba(255, 255, 255, 0.5)",
-          width: "600px",
-          height: "600px",
+          backgroundColor: "rgba(255,255,255,0.3)",
+          width: "80%",
+          height: "100%",
+          borderRadius: "20px",
         }}
       >
-        <form sx={{height:'100%', with:'100%', flexDirection: "column", border:'none', outline:'none'}}>
-          <Typography variant="h4" align='center' color='white'>Iniciar Sesión</Typography>
-          <label>Correo Electronico</label>
-          <input type="text" name="usuario" />
-          <label>Contraseña</label>
-          <input type="password" name="contraseña" />
+        <FormControl component="fieldset" sx={{ 
+          marginBottom: '1rem', padding: '8rem', fontSize: '0.8rem', borderRadius:'100px', width:'100%', height:'100%',marginTop:'5rem' }}>
+          <FormLabel component="legend" 
+            sx={{
+              fontSize:"1.75rem", textAlign:"center", color:"white",}}>Iniciar Sesión</FormLabel>
+          <TextField 
+            name='Correo Electronico'
+            placeholder="Correo Electronico"
+            InputProps={{
+              style: { color: 'white' }
+            }}
+            sx={{ marginBottom: '1rem' }}
 
-        </form>
-        <Button onClick={handleLogin}> Iniciar </Button>
+            />
+          <TextField 
+            name='Contraseña'
+            type="password"
+            placeholder="Contraseña"
+            InputProps={{
+              style: { color: 'white' }
+            }}
+            sx={{ marginBottom: '1rem' }}
+
+            />
+            <Box sx={{display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <Typography variant="body1" align='center' color='white'>¿Olvidaste tu contraseña?</Typography>
+            <Button variant="text" sx={{color:"#12707F"}}>Recuperar</Button>
+            </Box>
+            <Box sx={{display:'flex', alignItems:'center', justifyContent:'center'}}>
+            <Typography variant="body1" align='center' color='white'>¿No tienes cuenta?</Typography>
+            <Button variant="text" sx={{color:"#12707F"}}>Crear Cuenta</Button>
+            </Box>
+            <Box sx={{display:'flex', alignItems:'center', justifyContent:'center',}}>
+            <Button variant="contained" onClick={handleLogin} 
+                sx={{
+                  backgroundColor: '#12707F',  
+                  padding: '1.5rem', 
+                  fontSize: '0.8rem', 
+                  borderRadius:'25px', 
+                  width:'65%',
+                  '&:hover': {
+                    backgroundColor: '#12707F',
+                  } }}> Iniciar </Button>
+            </Box>
+        
+        </FormControl>
+        
       </Box>
     </ThemeProvider>
   );

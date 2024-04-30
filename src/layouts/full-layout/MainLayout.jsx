@@ -1,9 +1,7 @@
 import { Backdrop, CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
-function MainLayout() {
+function MainLayout() { //Pagina de SignIn y crear cuenta
   const [loading, isLoading] = useState(true);
   useEffect(() => {
     setTimeout(() => {
@@ -15,9 +13,9 @@ function MainLayout() {
     <>
       {!loading ? (
         <>
-        <Header />
+        
           <Outlet />
-          <Footer />
+          
         </>
       ) : (
         <Backdrop
