@@ -1,0 +1,93 @@
+/* estilo.css */
+
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #2c3e50, #3498db); /* Fondo azul difuminado */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+  
+  .container {
+    width: 100%; /* Utilizar todo el ancho disponible en su contenedor */
+    max-width: 360px; /* Ancho máximo para el formulario */
+    background: white; /* Fondo blanco para el formulario */
+    padding: 20px; /* Padding interno */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para el contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    text-align: center; /* Centrar el texto dentro del contenedor */
+  }
+  
+  .welcome-banner img {
+    max-width: 100px;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-banner h1 {
+    font-size: 28px; /* Aumentar el tamaño del título */
+    color: #2c3e50; /* Color de texto más oscuro para mejor contraste */
+  }
+  
+  /* Estilos del formulario */
+  .form-container {
+    width: 100%; /* Utilizar todo el ancho disponible en su contenedor */
+  }
+  
+  .form-container input,
+  .form-container button {
+    width: 100%; /* Ancho completo para ajustar al contenedor */
+    padding: 10px; /* Padding interno */
+    margin-bottom: 10px; /* Espaciado entre los elementos */
+    border: 1px solid #ccc; /* Borde para los inputs */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box; /* Para incluir el padding en el ancho total */
+  }
+  
+  .form-container input {
+    height: 40px;
+  }
+  
+  .form-container button {
+    background-color: #007bff; /* Color del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de mano */
+  }
+  
+  .form-container button:hover {
+    opacity: 0.8; /* Efecto de opacidad al pasar el mouse */
+
+  
+  .toggle-form {
+    text-align: center; /* Centrar el texto */
+  }
+  
+  .toggle-form button {
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    color: #007bff; /* Color del texto */
+    cursor: pointer; /* Cursor de mano */
+  }
+  
+  .toggle-form button:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+  }
+  
+  .google-signin-btn {
+    background-color: #db4b39; /* Rojo Google para el botón de Google */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cursor de mano */
+    padding: 10px;
+  }
+  
+  .google-signin-btn:hover {
+    background-color: #c0392b; /* Rojo más oscuro al pasar el mouse */
+  }
